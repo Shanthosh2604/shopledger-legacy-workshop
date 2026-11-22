@@ -1,0 +1,386 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 950" width="100%" height="100%">
+  <defs>
+    <!-- Gradients & Shadows -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="routerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+
+    <linearGradient id="libGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+
+    <linearGradient id="configGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#fb923c" />
+    </marker>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#fcd34d" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c084fc" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 26px; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .group-label { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .box-title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 15px; fill: #ffffff; text-anchor: middle; }
+    .box-sub { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #e2e8f0; text-anchor: middle; }
+    .wire { stroke: #475569; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+    .flow-wire { stroke: #f97316; stroke-width: 2.5; fill: none; }
+    .flow-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #fdba74; }
+    .step-badge { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 11px; fill: #ffffff; text-anchor: middle; }
+    .step-desc { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 12px; fill: #e2e8f0; }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="1300" height="950" fill="url(#bgGrad)" />
+
+  <!-- Grid overlay -->
+  <g opacity="0.05">
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#fff" stroke-width="1"/>
+    </pattern>
+    <rect width="1300" height="950" fill="url(#grid)" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(60, 48)">
+    <text class="title" x="0" y="0">ShopLedger Architecture</text>
+    <text class="subtitle" x="0" y="22">Node.js / Express billing, inventory &amp; khata ledger system</text>
+  </g>
+
+  <!-- ================= CONTAINER GROUPS ================= -->
+
+  <!-- Routers Group Container -->
+  <g transform="translate(360, 80)">
+    <rect width="580" height="130" rx="12" fill="#134e4a" fill-opacity="0.2" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text class="group-label" fill="#2dd4bf" x="20" y="24">Routes / API Endpoints (routes/)</text>
+  </g>
+
+  <!-- Lib Modules Container -->
+  <g transform="translate(60, 480)">
+    <rect width="1180" height="230" rx="12" fill="#0c4a6e" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text class="group-label" fill="#38bdf8" x="20" y="26">Core Library Modules (lib/)</text>
+  </g>
+
+  <!-- ================= COMPONENT BOXES ================= -->
+
+  <!-- UI (public/) -->
+  <g transform="translate(60, 270)" filter="url(#shadow)">
+    <rect width="170" height="110" rx="10" fill="url(#uiGrad)" stroke="#38bdf8" stroke-width="2"/>
+    <text class="box-title" x="85" y="50">UI (public/)</text>
+    <text class="box-sub" x="85" y="70">Static HTML/CSS/JS</text>
+    <text class="box-sub" x="85" y="86">Browser Client</text>
+  </g>
+
+  <!-- Express Server (server.js) - CENTER -->
+  <g transform="translate(480, 260)" filter="url(#shadow)">
+    <rect width="250" height="130" rx="12" fill="url(#serverGrad)" stroke="#60a5fa" stroke-width="2.5"/>
+    <rect x="15" y="15" width="220" height="30" rx="6" fill="#1e40af" />
+    <text class="box-title" x="125" y="36">Express Server</text>
+    <text class="box-sub" x="125" y="68" font-weight="bold">server.js (Port 3000)</text>
+    <text class="box-sub" x="125" y="88">BodyParser • Static Middleware</text>
+    <text class="box-sub" x="125" y="106">Global Router Dispatcher</text>
+  </g>
+
+  <!-- Config (config.js) - TOP RIGHT -->
+  <g transform="translate(1050, 275)" filter="url(#shadow)">
+    <rect width="170" height="95" rx="10" fill="url(#configGrad)" stroke="#f59e0b" stroke-width="2"/>
+    <text class="box-title" x="85" y="42">config.js</text>
+    <text class="box-sub" x="85" y="62">App Settings &amp; Defaults</text>
+    <text class="box-sub" x="85" y="78">Tax Rates • Paths</text>
+  </g>
+
+  <!-- Database (data/db.json) - RIGHT SIDE -->
+  <g transform="translate(1050, 535)" filter="url(#shadow)">
+    <rect width="170" height="120" rx="10" fill="url(#dbGrad)" stroke="#a855f7" stroke-width="2"/>
+    <text class="box-title" x="85" y="45">data/db.json</text>
+    <text class="box-sub" x="85" y="67">JSON File Database</text>
+    <text class="box-sub" x="85" y="85">Stores Products, Orders,</text>
+    <text class="box-sub" x="85" y="101">Customers &amp; Audit Logs</text>
+  </g>
+
+  <!-- ================= ROUTERS (routes/) ================= -->
+  <!-- products.js -->
+  <g transform="translate(380, 125)" filter="url(#shadow)">
+    <rect width="120" height="65" rx="8" fill="url(#routerGrad)" stroke="#2dd4bf" stroke-width="1.5"/>
+    <text class="box-title" x="60" y="32">products.js</text>
+    <text class="box-sub" x="60" y="49">/api/products</text>
+  </g>
+
+  <!-- orders.js (router) -->
+  <g transform="translate(520, 125)" filter="url(#shadow)">
+    <rect width="125" height="65" rx="8" fill="url(#routerGrad)" stroke="#f97316" stroke-width="2.5"/>
+    <text class="box-title" x="62" y="32">orders.js</text>
+    <text class="box-sub" x="62" y="49">/api/orders</text>
+  </g>
+
+  <!-- customers.js -->
+  <g transform="translate(665, 125)" filter="url(#shadow)">
+    <rect width="120" height="65" rx="8" fill="url(#routerGrad)" stroke="#2dd4bf" stroke-width="1.5"/>
+    <text class="box-title" x="60" y="32">customers.js</text>
+    <text class="box-sub" x="60" y="49">/api/customers</text>
+  </g>
+
+  <!-- reports.js (router) -->
+  <g transform="translate(805, 125)" filter="url(#shadow)">
+    <rect width="115" height="65" rx="8" fill="url(#routerGrad)" stroke="#2dd4bf" stroke-width="1.5"/>
+    <text class="box-title" x="57" y="32">reports.js</text>
+    <text class="box-sub" x="57" y="49">/api/reports</text>
+  </g>
+
+  <!-- ================= LIB MODULES (lib/) ================= -->
+  <!-- Row 1 (y = 525) -->
+  <!-- dates.js -->
+  <g transform="translate(90, 525)" filter="url(#shadow)">
+    <rect width="105" height="60" rx="8" fill="url(#libGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="box-title" x="52" y="32">dates.js</text>
+    <text class="box-sub" x="52" y="48">Time formatting</text>
+  </g>
+
+  <!-- inventory.js -->
+  <g transform="translate(210, 525)" filter="url(#shadow)">
+    <rect width="115" height="60" rx="8" fill="url(#libGrad)" stroke="#fb923c" stroke-width="2"/>
+    <text class="box-title" x="57" y="30">inventory.js</text>
+    <text class="box-sub" x="57" y="47">check • reserve</text>
+  </g>
+
+  <!-- pricing.js -->
+  <g transform="translate(340, 525)" filter="url(#shadow)">
+    <rect width="115" height="60" rx="8" fill="url(#libGrad)" stroke="#fb923c" stroke-width="2"/>
+    <text class="box-title" x="57" y="30">pricing.js</text>
+    <text class="box-sub" x="57" y="47">computeTotals</text>
+  </g>
+
+  <!-- coupons.js -->
+  <g transform="translate(470, 525)" filter="url(#shadow)">
+    <rect width="110" height="60" rx="8" fill="url(#libGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="box-title" x="55" y="30">coupons.js</text>
+    <text class="box-sub" x="55" y="47">apply discount</text>
+  </g>
+
+  <!-- tax.js -->
+  <g transform="translate(595, 525)" filter="url(#shadow)">
+    <rect width="100" height="60" rx="8" fill="url(#libGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="box-title" x="50" y="30">tax.js</text>
+    <text class="box-sub" x="50" y="47">GST calculation</text>
+  </g>
+
+  <!-- invoice.js -->
+  <g transform="translate(710, 525)" filter="url(#shadow)">
+    <rect width="105" height="60" rx="8" fill="url(#libGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="box-title" x="52" y="30">invoice.js</text>
+    <text class="box-sub" x="52" y="47">generate invoice</text>
+  </g>
+
+  <!-- Row 2 (y = 615) -->
+  <!-- ledger.js -->
+  <g transform="translate(210, 615)" filter="url(#shadow)">
+    <rect width="115" height="60" rx="8" fill="url(#libGrad)" stroke="#fb923c" stroke-width="2"/>
+    <text class="box-title" x="57" y="30">ledger.js</text>
+    <text class="box-sub" x="57" y="47">Khata balance</text>
+  </g>
+
+  <!-- orders.js (lib) -->
+  <g transform="translate(340, 615)" filter="url(#shadow)">
+    <rect width="115" height="60" rx="8" fill="url(#libGrad)" stroke="#fb923c" stroke-width="2"/>
+    <text class="box-title" x="57" y="30">orders.js</text>
+    <text class="box-sub" x="57" y="47">orders.add</text>
+  </g>
+
+  <!-- reports.js (lib) -->
+  <g transform="translate(470, 615)" filter="url(#shadow)">
+    <rect width="110" height="60" rx="8" fill="url(#libGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="box-title" x="55" y="30">reports.js</text>
+    <text class="box-sub" x="55" y="47">analytics agg</text>
+  </g>
+
+  <!-- store.js -->
+  <g transform="translate(710, 615)" filter="url(#shadow)">
+    <rect width="140" height="60" rx="8" fill="url(#libGrad)" stroke="#fb923c" stroke-width="2.5"/>
+    <text class="box-title" x="70" y="30">store.js</text>
+    <text class="box-sub" x="70" y="47">read • write • audit</text>
+  </g>
+
+  <!-- ================= STRUCTURAL WIRES ================= -->
+  <!-- UI to Server (static serving) -->
+  <path d="M 230 310 L 480 310" class="wire" marker-end="url(#arrow-blue)"/>
+  <text x="320" y="302" class="subtitle" font-size="11" fill="#94a3b8" text-anchor="middle">HTTP static serve</text>
+
+  <!-- Server to Routers -->
+  <path d="M 520 260 L 440 190" class="wire" marker-end="url(#arrow-blue)"/>
+  <path d="M 580 260 L 580 190" class="wire" marker-end="url(#arrow-blue)"/>
+  <path d="M 640 260 L 725 190" class="wire" marker-end="url(#arrow-blue)"/>
+  <path d="M 680 260 L 860 190" class="wire" marker-end="url(#arrow-blue)"/>
+
+  <!-- Config to Server & Modules -->
+  <path d="M 1050 315 L 730 315" class="wire" stroke="#f59e0b" marker-end="url(#arrow-yellow)"/>
+  <text x="890" y="307" class="subtitle" font-size="11" fill="#f59e0b" text-anchor="middle">config params</text>
+  <path d="M 1135 370 L 1135 500 L 850 540" class="wire" stroke="#f59e0b" marker-end="url(#arrow-yellow)"/>
+
+  <!-- store.js to data/db.json -->
+  <path d="M 850 645 L 1050 600" class="flow-wire" stroke="#c084fc" stroke-width="2" marker-end="url(#arrow-purple)" marker-start="url(#arrow-purple)"/>
+  <text x="955" y="615" class="subtitle" font-size="11" fill="#c084fc" text-anchor="middle">JSON Read/Write</text>
+
+  <!-- ================= ORDER PLACEMENT FLOW ARROWS ================= -->
+  <!-- 1. UI -> orders router -->
+  <path d="M 145 270 Q 145 155 520 155" class="flow-wire" marker-end="url(#arrow-orange)"/>
+  <text class="flow-text" x="250" y="145">1. POST /api/orders</text>
+
+  <!-- 2. orders router -> validation & inventory.check -->
+  <path d="M 545 190 C 545 240, 267 360, 267 525" class="flow-wire" marker-end="url(#arrow-orange)"/>
+  <text class="flow-text" x="315" y="390">2. validate &amp; inventory.check</text>
+
+  <!-- 3. inventory -> pricing.computeTotals -->
+  <path d="M 325 555 L 340 555" class="flow-wire" marker-end="url(#arrow-orange)"/>
+
+  <!-- 4. pricing -> coupons / tax -->
+  <path d="M 455 555 L 470 555" class="flow-wire" marker-end="url(#arrow-orange)"/>
+
+  <!-- 5. pricing -> optional ledger.js -->
+  <path d="M 380 585 C 380 600, 267 600, 267 615" class="flow-wire" marker-end="url(#arrow-orange)"/>
+  <text class="flow-text" x="280" y="605">3. optional khata</text>
+
+  <!-- 6. ledger -> inventory.reserve & orders.add -->
+  <path d="M 325 645 L 340 645" class="flow-wire" marker-end="url(#arrow-orange)"/>
+
+  <!-- 7. orders.add -> store.appendAudit & store.write -->
+  <path d="M 455 645 L 710 645" class="flow-wire" marker-end="url(#arrow-orange)"/>
+  <text class="flow-text" x="580" y="640">4. appendAudit &amp; write</text>
+
+  <!-- 8. Return response back to UI -->
+  <path d="M 520 170 Q 170 180, 170 270" class="flow-wire" stroke-dasharray="5 3" marker-end="url(#arrow-orange)"/>
+  <text class="flow-text" x="230" y="220">5. JSON Response { orderId, ok }</text>
+
+  <!-- ================= STEP-BY-STEP ORDER PIPELINE BOTTOM BANNER ================= -->
+  <g transform="translate(60, 740)">
+    <rect width="1180" height="175" rx="12" fill="#0f172a" stroke="#f97316" stroke-width="1.5" filter="url(#shadow)"/>
+    <text class="group-label" fill="#fb923c" x="25" y="32">Order Placement Execution Sequence</text>
+
+    <!-- Sequence Steps Pipeline -->
+    <!-- Step 1 -->
+    <g transform="translate(25, 55)">
+      <circle cx="15" cy="15" r="14" fill="#f97316"/>
+      <text class="step-badge" x="15" y="19">1</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">UI Form Submit</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">POST /api/orders</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(180, 55)">
+      <circle cx="15" cy="15" r="14" fill="#ea580c"/>
+      <text class="step-badge" x="15" y="19">2</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">Router Validation</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Sanitize payload</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(340, 55)">
+      <circle cx="15" cy="15" r="14" fill="#c2410c"/>
+      <text class="step-badge" x="15" y="19">3</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">inventory.check</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Verify stock qty</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(500, 55)">
+      <circle cx="15" cy="15" r="14" fill="#ea580c"/>
+      <text class="step-badge" x="15" y="19">4</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">pricing.computeTotals</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Coupons + Taxes</text>
+    </g>
+
+    <!-- Step 5 -->
+    <g transform="translate(710, 55)">
+      <circle cx="15" cy="15" r="14" fill="#c2410c"/>
+      <text class="step-badge" x="15" y="19">5</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">ledger (Khata)</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Credit check/update</text>
+    </g>
+
+    <!-- Step 6 -->
+    <g transform="translate(900, 55)">
+      <circle cx="15" cy="15" r="14" fill="#ea580c"/>
+      <text class="step-badge" x="15" y="19">6</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">inventory.reserve</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Deduct stock balance</text>
+    </g>
+
+    <!-- Row 2 of Pipeline -->
+    <!-- Step 7 -->
+    <g transform="translate(25, 115)">
+      <circle cx="15" cy="15" r="14" fill="#ea580c"/>
+      <text class="step-badge" x="15" y="19">7</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">orders.add</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Create order object</text>
+    </g>
+
+    <!-- Step 8 -->
+    <g transform="translate(240, 115)">
+      <circle cx="15" cy="15" r="14" fill="#c2410c"/>
+      <text class="step-badge" x="15" y="19">8</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">store.appendAudit</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Immutable audit event</text>
+    </g>
+
+    <!-- Step 9 -->
+    <g transform="translate(480, 115)">
+      <circle cx="15" cy="15" r="14" fill="#ea580c"/>
+      <text class="step-badge" x="15" y="19">9</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">store.write</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Persist to data/db.json</text>
+    </g>
+
+    <!-- Step 10 -->
+    <g transform="translate(710, 115)">
+      <circle cx="15" cy="15" r="14" fill="#16a34a"/>
+      <text class="step-badge" x="15" y="19">10</text>
+      <text class="step-desc" x="38" y="14" font-weight="700">HTTP Response</text>
+      <text class="step-desc" x="38" y="28" fill="#94a3b8" font-size="11">Return order receipt to UI</text>
+    </g>
+  </g>
+</svg>
